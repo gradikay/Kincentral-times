@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<news>
+  <!--root Rode -->
+  <article>
+    <!-- Node -->
+    <category>Fashion</category>
+    <!-- Child node -->
+    <title>Anna's new summer Collection</title>
+    <data>10/22/2019</data>
+    <aFirstName>Masa</aFirstName>
+    <aLastName>Musa</aLastName>
+    <authorPic>IMG_0309.JPG</authorPic>
+    <description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+      et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+      Excepteur sint occaecat cupidatat non proident, 
+      sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </description>
+    <pictures>
+      <mainPic>IMG_0348.JPG</mainPic>
+      <otherPic>IMG_0324.JPG</otherPic>
+    </pictures>
+    <source>www.businessinsider.com</source>
+  </article>
+  <article>
+    <category>Food</category>
+    <title>Fangs dinner is the best in Town</title>
+    <data>09/07/2019</data>
+    <aFirstName>Gradi</aFirstName>
+    <aLastName>Kayamba</aLastName>
+     <authorPic>IMG_0350.JPG</authorPic>
+    <description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+      et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+      Excepteur sint occaecat cupidatat non proident, 
+      sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </description>
+    <pictures>
+      <mainPic>IMG_0350.JPG</mainPic>
+      <otherPic>IMG_0358.JPG</otherPic>
+    </pictures>
+    <source>www.businessinsider.com</source>
+  </article>
+  <article>
+    <category>Travel</category>
+    <title>Emisphere flight now 50% of</title>
+    <data>3/05/2019</data>
+    <aFirstName>Ngoma</aFirstName>
+    <aLastName>Kossa</aLastName>
+    <authorPic>IMG_0359.JPG</authorPic>
+    <description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+      et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+      Excepteur sint occaecat cupidatat non proident, 
+      sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </description>
+    <pictures>
+      <mainPic>IMG_0359.JPG</mainPic>
+      <otherPic>IMG_0358.JPG</otherPic>
+    </pictures>
+    <source>www.businessinsider.com</source>
+  </article>
+  <article>
+    <category>Technology</category>
+    <title>Dombeles Technology lauching in April</title>
+    <data>1/05/2019</data>
+    <aFirstName>Masa</aFirstName>
+    <aLastName>Musa</aLastName>
+    <authorPic>IMG_0354.JPG</authorPic>
+    <description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+      et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+      Excepteur sint occaecat cupidatat non proident, 
+      sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </description>
+    <pictures>
+      <mainPic>IMG_0354.JPG</mainPic>
+      <otherPic>IMG_0358.JPG</otherPic>
+    </pictures>
+    <source>www.businessinsider.com</source>
+  </article>
+  <article>
+    <category>Fashion</category>
+    <title>Corona is buying Morta</title>
+    <data>10/22/2019</data>
+    <aFirstName>Lusaka</aFirstName>
+    <aLastName>Monali</aLastName>
+    <authorPic>IMG_0350.JPG</authorPic>
+    <description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+      et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+      Excepteur sint occaecat cupidatat non proident, 
+      sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </description>
+    <pictures>
+      <mainPic>IMG_0350.JPG</mainPic>
+      <otherPic>IMG_0352.JPG</otherPic>
+    </pictures>
+    <source>www.businessinsider.com</source>
+  </article>
+  <article>
+  <category>Entertainment</category>
+  <title>Beach Park what else Kinshasa has to offer</title>
+  <data>9/08/2019</data>
+  <aFirstName>Masa</aFirstName>
+  <aLastName>Musa</aLastName>
+  <authorPic>IMG_0348.JPG</authorPic>
+  <description>
+    The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) 
+    that doesn't distract from the layout. A practice not without controversy, 
+    laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.
+  </description>
+  <pictures>
+    <mainPic>IMG_0348.JPG</mainPic>
+    <otherPic>IMG_0350.JPG</otherPic>
+  </pictures>
+  <source>www.businessinsider.com</source>
+</article>
+</news>

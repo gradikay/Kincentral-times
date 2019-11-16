@@ -1,0 +1,234 @@
+﻿@charset "UTF-8";
+
+/* box-sizing : help us keep the size constant when adding padding, or margin */
+/*colors, 
+    B #28304d,#2a283d,#292a34,#282425
+    R #5c0923,#be0032,#841b2d,#3f1728,#2e1d21
+
+*/
+* {
+    box-sizing: border-box;
+    font-family: 'Bubblegum Sans', Times, serif;
+
+}
+/* --------------- :root - help define our global variables ------------------ */
+:root {
+    --main-color-one: #131502;
+    --main-color-two: #be0032;
+    --main-border: 3px solid #f2f2f2;
+    --main-border-bottom: 1px solid #cacaca;
+}
+img{max-width:100%;}
+article h1{margin:auto; font-size:1.2em; text-transform:uppercase;}
+p{margin:0;}
+button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:5px;}
+.description::first-line{font-weight:bold;}
+
+
+/* --------------Laptop styling----------------*/
+@media screen and (min-width:801px){
+    .leftFixed {
+        position: fixed;
+        background: white;
+        z-index: 1;
+        left: 0;
+        top: 50px;
+        height: -webkit-fill-available;
+        overflow: auto;
+    }
+
+    .mainFixed {
+        width: 60%;
+        float: left;
+        padding: 15px;
+        position: relative;
+        left: 20%;
+    }
+
+    .rightFixed {
+        position: fixed;
+        right: 0;
+        top: 50px;
+        background: white;
+        z-index: 1;
+        height: -webkit-fill-available;
+        overflow: auto;
+    }
+    body{margin:0;}
+    header, main, footer, nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    header{
+        width:100%;
+        text-align:center;
+        margin:auto;
+    }
+    header section{margin:15px auto;}
+    header h1 {
+        margin: auto;
+        font-size: 4em;
+    }
+    #left-content article, #right article, main #mainContent article{
+        border-bottom:var(--main-border-bottom);
+        padding-bottom:15px;
+        margin-bottom:15px;
+        overflow:auto;
+    }
+    #left-content article:first-child, #right article:first-child{
+        margin-top:15px;
+    }
+    #left-content article:last-child, #right article:last-child{
+        border-bottom:0;
+        padding-bottom:60px;
+    }
+    aside#left section:first-child, aside#right section:first-child {
+        border-bottom: var(--main-border-bottom);
+        border-bottom: 5px solid #131502;
+        padding-bottom: 15px;
+    }
+    main article h1::first-letter, aside article h1::first-letter {
+        font-size: 1.2em;
+        font-weight: bolder;
+        color: var(--main-color-two);
+        text-decoration: overline;
+    }
+    nav {
+        width: 100%;
+        background-color: var(--main-color-one);
+        text-align: center;
+        margin:0;
+        color:white;
+        z-index:2;
+        transition: position 1s;
+    }
+    .sticky {
+        position: fixed;
+        top: 0;
+        box-shadow: 0px 0px 10px -1px black;
+    }
+    nav section:first-child{width:20%;float:left; margin:auto;}
+    nav section:first-child h3{font-size: 0.8em;}
+    nav section:last-child{width:20%;float:right;clear:right;margin:auto;}
+    nav section:nth-child(2){width:60%; float:left; margin:auto;}
+    nav:nth-child(2) a {
+        color: white;
+        padding: 10px;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.6em;
+        background-color:transparent;
+        transition: background 1s;
+    }
+    nav:nth-child(2) a:hover{
+        background-color:var(--main-color-two);
+    }
+    nav input{border-radius:5px;padding:10px;}
+    aside#left, aside#right {
+        width: 20%;
+        border:var(--main-border);
+        padding:15px;
+        
+    }
+    /*hidding scroll bar for opera, safari, and chrome*/
+    /*aside::-webkit-scrollbar{
+        display:none;
+    }*/
+    /*hiddeing scroll bar for IE and Edge*/
+    aside{
+        -ms-overflow-style:none;
+    }
+    aside h1.heading {
+        text-align: center;
+        background-color: var(--main-color-two);
+        padding: 5px;
+        color: white;
+        border: 5px solid #131502;
+        font-size: 2em;
+        margin: 0;
+    }
+    aside#left {
+        float: left;
+    }
+    main{width:60%;float:left;padding:15px;}
+    aside#right{float:right;}
+    main section article:nth-child(even) div.image-div {
+        width: 300px;
+        float: left;
+        margin: auto 15px;
+    }
+    main section article:nth-child(odd) div.image-div {
+        width: 300px;
+        float: right;
+        margin: auto 15px;
+    }
+    aside article h1 {
+        margin: auto;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+    .image-div{
+        position:relative;
+        margin:10px auto;
+    }
+    #mainContentLine {
+        width: 100%;
+        border-bottom: var(--main-border-bottom);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    div.image-div-inline {
+        width: 120px;
+        float: left;
+        margin: auto 15px;
+    }
+    .content-div{
+        width:100%;
+        display:inline-block;
+    }
+    .content-div h1{
+        margin: 6px auto;
+        text-transform: uppercase;
+    }
+    .image-div h4{
+        position: absolute;
+        top: 69.5%;
+        background-color: #ffffff;
+        color: var(--main-color-two);
+        padding: 0px 25px;
+        border: 4px solid var(--main-color-two);
+    }
+    .category{padding:5px;background-color:var(--main-color-one); color:white;}
+    .category-div{margin:15px auto;}
+    article .description::after{
+        content:" ...READ MORE... "
+    }
+    footer {
+        width: 60%;
+        position: relative;
+        padding: 15px;
+        background-color: var(--main-color-one);
+        color: white;
+        left: 20%;
+    }
+    footer > section {
+        width:25%;
+    }
+    footer > section:last-child{
+        width:100%;
+        margin:auto;
+        text-align:center;
+        border-top:1px solid #f7f7f7;
+        padding:30px 0 15px 0;
+    }
+
+}
+/* --------------Tablet styling----------------*/
+@media screen and (max-width:800px){
+    body{margin:auto;}
+}
+/* --------------Phone styling----------------*/
+@media screen and (max-width:425px){
+
+}
