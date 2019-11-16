@@ -9,8 +9,6 @@ var rightAside = document.getElementById("right");
 var mainSection = document.getElementById("mainC");
 //get the offset position of the navbar
 var stickyBar = navigation.offsetTop;
-    
-
 function myStickyBar() {
 
     if (window.pageYOffset >= stickyBar) {
@@ -63,7 +61,6 @@ var newsLetter = [
     }
 ];
 // Loading our xml
-
 var xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function () {
@@ -76,7 +73,6 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "app.xml", true);
 xhttp.send();
-
 function loadLeftContent(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
@@ -146,3 +142,35 @@ function loadMainContentLine(xml) {
     }
     document.getElementById("mainContentLine").innerHTML = txt;
 }
+// create a function to display our date
+
+var d = new Date;
+document.getElementById("copyDate").innerHTML = d.getFullYear();
+
+var day;
+switch (new Date().getDay()) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+        break;
+    default:
+        day = "This is Gradi's favorite arror!";
+}
+document.getElementById("day").innerHTML = day + " - "  + d.getDate() + " " + d.getMonth() + 1 + " , " + d.getFullYear();    

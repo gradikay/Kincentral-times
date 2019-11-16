@@ -59,15 +59,48 @@ button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:
         display: flex;
         flex-wrap: wrap;
     }
-    header{
-        width:100%;
-        text-align:center;
-        margin:auto;
+    header {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        overflow: hidden;
+        height: 100px;
     }
     header section{margin:15px auto;}
     header h1 {
         margin: auto;
         font-size: 4em;
+    }
+    header span.spanBlock{    
+        display: block;
+        position: relative;
+        width: 140px;
+        float: right;
+        top:0;
+        animation-name:swiping;
+        animation-duration:20s;
+        animation-direction: normal;
+        animation-iteration-count:infinite;
+    }
+    header span.spanList{display:inline-block; position:relative;}
+    @keyframes swiping{
+        0%{top:0;}
+        19%{top:0;}
+        20%{top:-75px;}
+        59%{top:-75px;}
+        60%{top:-150px;}
+        85%{top:-150px;}
+        86%{top:-225px;}
+        100%{top:-225px;}
+        
+        /*0%{top:0;}
+        15%{top:-75px;}
+        30%{top:-150px;}
+        50%{top:-225px;}
+        70%{top:-300px;}
+        90%{top:-375px;}
+        100%{top:-450px;}*/
+        
     }
     #left-content article, #right article, main #mainContent article{
         border-bottom:var(--main-border-bottom);
