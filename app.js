@@ -3,12 +3,12 @@
 //test code : document.getElementById("test").style.backgroundColor = "yellow";
 window.onscroll = function () { myStickyBar() };
 
-var navigation = document.getElementById("nav");
-var leftAside = document.getElementById("left");
-var rightAside = document.getElementById("right");
-var mainSection = document.getElementById("mainC");
+const navigation = document.getElementById("nav");
+const leftAside = document.getElementById("left");
+const rightAside = document.getElementById("right");
+const mainSection = document.getElementById("mainC");
 //get the offset position of the navbar
-var stickyBar = navigation.offsetTop;
+const stickyBar = navigation.offsetTop;
 function myStickyBar() {
 
     if (window.pageYOffset >= stickyBar) {
@@ -25,7 +25,7 @@ function myStickyBar() {
     }
 }
 // Let create the news object
-var newsLetter = [
+const newsLetter = [
     article1 = {
         category:"Fashion",
         title:"Anna's new summer Collection",
@@ -87,7 +87,9 @@ function loadLeftContent(xml) {
             "<p class='description'>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue.substring(0, 110) +
             "</p></article>";
     }
-    document.getElementById("left-content").innerHTML = txt;
+    let obj;
+    obj = document.getElementById("left-content");
+    obj.innerHTML = txt;
 }
 function loadRightContent(xml) {
     var xmlDoc = xml.responseXML;
@@ -99,7 +101,9 @@ function loadRightContent(xml) {
             "<h1>" + x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
             "</h1></article>";
     }
-    document.getElementById("right-content").innerHTML = txt;
+    let obj;
+    obj = document.getElementById("right-content");
+    obj.innerHTML = txt;
 }
 function loadMainContent(xml) {
     var xmlDoc = xml.responseXML;
@@ -119,7 +123,10 @@ function loadMainContent(xml) {
             "<p>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
             "</p></article>";
 
-    } document.getElementById("mainContent").innerHTML = txt;
+    }
+    let obj;
+    obj = document.getElementById("mainContent");
+    obj.innerHTML = txt;
 }
 function loadMainContentLine(xml) {
     var xmlDoc = xml.responseXML;
@@ -140,7 +147,9 @@ function loadMainContentLine(xml) {
             x[i].getElementsByTagName("aLastName")[0].childNodes[0].nodeValue + " | " +
             "<small>" + x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue + "</small></p></article>"
     }
-    document.getElementById("mainContentLine").innerHTML = txt;
+    let obj;
+    obj = document.getElementById("mainContentLine");
+    obj.innerHTML = txt;
 }
 // create a function to display our date
 
@@ -173,4 +182,6 @@ switch (new Date().getDay()) {
     default:
         day = "This is Gradi's favorite arror!";
 }
-document.getElementById("day").innerHTML = day + " - "  + d.getDate() + " " + d.getMonth() + 1 + " , " + d.getFullYear();    
+let date;
+date = document.getElementById("day");
+date.innerHTML = day + " - " + d.getDate() + " " + d.getMonth() + 1 + " , " + d.getFullYear();    

@@ -1,5 +1,8 @@
 ﻿@charset "UTF-8";
-
+/*
+    AUTHOR: GRADI M KAYAMBA
+    DATE: 11/16/19
+*/
 /* box-sizing : help us keep the size constant when adding padding, or margin */
 /*colors, 
     B #28304d,#2a283d,#292a34,#282425
@@ -18,15 +21,126 @@
     --main-border: 3px solid #f2f2f2;
     --main-border-bottom: 1px solid #cacaca;
 }
-img{max-width:100%;}
-article h1{margin:auto; font-size:1.2em; text-transform:uppercase;}
-p{margin:0;}
-button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:5px;}
-.description::first-line{font-weight:bold;}
-
+img {max-width:100%;}
+article h1 {margin:auto; font-size:1.2em; text-transform:uppercase;}
+p {margin:0;}
+button {background-color:#a6001a; color:white;border:0;padding:5px;border-radius:5px;}
+.description::first-line {font-weight:bold;}
+.sticky {
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 0px 10px -1px black;
+}
+header, main, footer, nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+header {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    height: 100px;
+}
+header section {margin:15px auto;}
+header h1 {
+    margin: auto;
+    font-size: 4em;
+}
+header span.spanBlock{    
+    display: block;
+    position: relative;
+    width: 140px;
+    float: right;
+    top:0;
+    animation-name:swiping;
+    animation-duration:20s;
+    animation-direction: normal;
+    animation-iteration-count:infinite;
+}
+header span.spanList {display:inline-block; position:relative;}
+@keyframes swiping{
+    0%{top:0;}
+    19%{top:0;}
+    20%{top:-75px;}
+    59%{top:-75px;}
+    60%{top:-150px;}
+    85%{top:-150px;}
+    86%{top:-225px;}
+    100%{top:-225px;}        
+}
+nav {
+    width: 100%;
+    background-color: var(--main-color-one);
+    text-align: center;
+    margin:0;
+    color:white;
+    z-index:2;
+    transition: position 1s;
+}
+nav section:first-child {width:20%;float:left; margin:auto;}
+nav section:first-child h3 {font-size: 0.8em;}
+nav section:last-child {width:20%;float:right;clear:right;margin:auto;}
+nav section:nth-child(2) {width:60%; float:left; margin:auto;}
+nav input {border-radius:5px;padding:10px;}
+nav:nth-child(2) a {
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6em;
+    background-color:transparent;
+    transition: background 1s;
+}
+nav:nth-child(2) a:hover{
+    background-color:var(--main-color-two);
+}
+aside#left article .description::after {
+    content: " ...READ MORE... "
+}
+main article h1::first-letter, aside article h1::first-letter {
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: var(--main-color-two);
+    text-decoration: overline;
+}
+main #mainContentLine {
+    width: 100%;
+    border-bottom: var(--main-border-bottom);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+main #mainContentLine div.image-div-inline {
+    width: 120px;
+    float: left;
+    margin: auto 15px;
+}
+main #mainContentLine .content-div {
+    width: 100%;
+    display: inline-block;
+}
+main #mainContent .image-div {position: relative;}
+footer {
+    position: relative;
+    padding: 15px;
+    background-color: var(--main-color-one);
+    color: white;
+}
+footer h3{text-transform:uppercase;}
+footer > section {
+    width:25%;
+}
+footer > section:last-child{
+    width:100%;
+    margin:auto;
+    text-align:center;
+    border-top:1px solid #f7f7f7;
+    padding:30px 0 15px 0;
+}
 
 /* --------------Laptop styling----------------*/
-@media screen and (min-width:801px){
+@media screen and (min-width:1001px){
     .leftFixed {
         position: fixed;
         background: white;
@@ -36,7 +150,6 @@ button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:
         height: -webkit-fill-available;
         overflow: auto;
     }
-
     .mainFixed {
         width: 60%;
         float: left;
@@ -44,7 +157,6 @@ button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:
         position: relative;
         left: 20%;
     }
-
     .rightFixed {
         position: fixed;
         right: 0;
@@ -55,53 +167,6 @@ button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:
         overflow: auto;
     }
     body{margin:0;}
-    header, main, footer, nav {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    header {
-        width: 100%;
-        text-align: center;
-        margin: auto;
-        overflow: hidden;
-        height: 100px;
-    }
-    header section{margin:15px auto;}
-    header h1 {
-        margin: auto;
-        font-size: 4em;
-    }
-    header span.spanBlock{    
-        display: block;
-        position: relative;
-        width: 140px;
-        float: right;
-        top:0;
-        animation-name:swiping;
-        animation-duration:20s;
-        animation-direction: normal;
-        animation-iteration-count:infinite;
-    }
-    header span.spanList{display:inline-block; position:relative;}
-    @keyframes swiping{
-        0%{top:0;}
-        19%{top:0;}
-        20%{top:-75px;}
-        59%{top:-75px;}
-        60%{top:-150px;}
-        85%{top:-150px;}
-        86%{top:-225px;}
-        100%{top:-225px;}
-        
-        /*0%{top:0;}
-        15%{top:-75px;}
-        30%{top:-150px;}
-        50%{top:-225px;}
-        70%{top:-300px;}
-        90%{top:-375px;}
-        100%{top:-450px;}*/
-        
-    }
     #left-content article, #right article, main #mainContent article{
         border-bottom:var(--main-border-bottom);
         padding-bottom:15px;
@@ -120,44 +185,6 @@ button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:
         border-bottom: 5px solid #131502;
         padding-bottom: 15px;
     }
-    main article h1::first-letter, aside article h1::first-letter {
-        font-size: 1.2em;
-        font-weight: bolder;
-        color: var(--main-color-two);
-        text-decoration: overline;
-    }
-    nav {
-        width: 100%;
-        background-color: var(--main-color-one);
-        text-align: center;
-        margin:0;
-        color:white;
-        z-index:2;
-        transition: position 1s;
-    }
-    .sticky {
-        position: fixed;
-        top: 0;
-        box-shadow: 0px 0px 10px -1px black;
-    }
-    nav section:first-child{width:20%;float:left; margin:auto;}
-    nav section:first-child h3{font-size: 0.8em;}
-    nav section:last-child{width:20%;float:right;clear:right;margin:auto;}
-    nav section:nth-child(2){width:60%; float:left; margin:auto;}
-    nav:nth-child(2) a {
-        color: white;
-        padding: 10px;
-        display: inline-block;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.6em;
-        background-color:transparent;
-        transition: background 1s;
-    }
-    nav:nth-child(2) a:hover{
-        background-color:var(--main-color-two);
-    }
-    nav input{border-radius:5px;padding:10px;}
     aside#left, aside#right {
         width: 20%;
         border:var(--main-border);
@@ -168,10 +195,10 @@ button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:
     /*aside::-webkit-scrollbar{
         display:none;
     }*/
-    /*hiddeing scroll bar for IE and Edge*/
+    /*hiddeing scroll bar for IE and Edge
     aside{
         -ms-overflow-style:none;
-    }
+    }*/
     aside h1.heading {
         text-align: center;
         background-color: var(--main-color-two);
@@ -181,87 +208,133 @@ button{background-color:#a6001a; color:white;border:0;padding:5px;border-radius:
         font-size: 2em;
         margin: 0;
     }
-    aside#left {
-        float: left;
-    }
-    main{width:60%;float:left;padding:15px;}
-    aside#right{float:right;}
-    main section article:nth-child(even) div.image-div {
-        width: 300px;
-        float: left;
-        margin: auto 15px;
-    }
-    main section article:nth-child(odd) div.image-div {
-        width: 300px;
-        float: right;
-        margin: auto 15px;
-    }
-    aside article h1 {
-        margin: auto;
-        font-size: 1.2em;
-        text-transform: uppercase;
-    }
-    .image-div{
-        position:relative;
-        margin:10px auto;
-    }
-    #mainContentLine {
-        width: 100%;
-        border-bottom: var(--main-border-bottom);
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-    }
-    div.image-div-inline {
-        width: 120px;
-        float: left;
-        margin: auto 15px;
-    }
-    .content-div{
-        width:100%;
-        display:inline-block;
-    }
-    .content-div h1{
-        margin: 6px auto;
-        text-transform: uppercase;
-    }
-    .image-div h4{
+    aside#left {float: left;}    
+    aside#left .image-div{position:relative;}
+    aside#left .image-div h4 {
         position: absolute;
-        top: 69.5%;
+        bottom:-17px;
         background-color: #ffffff;
         color: var(--main-color-two);
         padding: 0px 25px;
         border: 4px solid var(--main-color-two);
     }
-    .category{padding:5px;background-color:var(--main-color-one); color:white;}
-    .category-div{margin:15px auto;}
-    article .description::after{
-        content:" ...READ MORE... "
+    aside#right {
+        float: right;
     }
-    footer {
-        width: 60%;
-        position: relative;
-        padding: 15px;
-        background-color: var(--main-color-one);
-        color: white;
-        left: 20%;
+    main{width:60%;float:left;padding:15px;}
+    main section article:nth-child(even) div.image-div {
+        width: 300px;
+        float: left;
+        margin: 0 15px 0 0;
     }
-    footer > section {
-        width:25%;
+    main section article:nth-child(odd) div.image-div {
+        width: 300px;
+        float: right;
+        margin: 0 0 0 15px;
     }
-    footer > section:last-child{
-        width:100%;
-        margin:auto;
-        text-align:center;
-        border-top:1px solid #f7f7f7;
-        padding:30px 0 15px 0;
+    main #mainContentLine .content-div h1{
+        margin: 6px auto;
+        text-transform: uppercase;
     }
-
+     .category{padding:5px;background-color:var(--main-color-one); color:white;}
+     .category-div{margin:15px auto;}
+    footer {width: 60%; left: 20%;}
 }
 /* --------------Tablet styling----------------*/
-@media screen and (max-width:800px){
+@media screen and (max-width:1000px){
     body{margin:auto;}
+    nav section:first-child, nav section:last-child{display:none;}
+    nav section:nth-child(2){width:100%;}
+    aside#left {width:40%;float:left;border:var(--main-border);}
+    aside#left section:first-child{    
+        box-shadow: 0 0 4px -1px #2b2b2b;
+        background: #be0032;
+        margin: 15px;
+    }
+    aside#left section:first-child h1.heading {
+        text-align: center;
+        padding: 5px;
+        color: white;
+        font-size: 1.2em;
+        margin: 0;
+    }
+    aside#left article h4 {
+        padding: 0px 15px 0px 15px;
+        margin: 0 15px 5px 15px;
+        background-color: #be0032;
+        text-align: center;
+        color: white;
+    }
+    aside#left article h1 {
+        padding: 0px 15px 5px 15px;
+        font-size: .93em;
+    }
+    aside#left article p {    
+        padding: 0px 15px 5px 15px;
+        margin-bottom: 15px;
+    }
+    main{width:60%;float:left;padding:15px 0; overflow:auto;}
+    main #mainContent article{
+        position: relative;
+        height: 20%;
+        margin-bottom: 15px;
+        overflow: hidden;
+        background-color: black;
+    }
+    main #mainContent .image-div{margin:0;}
+    main #mainContent img{position:absolute;}
+    main #mainContent article h1, main #mainContent p.category-div, main #mainContent p {
+        position: inherit;
+        top: 0;
+        color: white;
+        background-color: #00000047;
+        padding: 5px 15px;
+    }
+    main #mainContent p {
+        bottom: -53px;
+    }
+    aside#right {
+        clear: both;
+        padding: 15px;
+        background-color: #fbfbfb;
+    }
+    footer{width:100%;}
 }
 /* --------------Phone styling----------------*/
 @media screen and (max-width:425px){
-
+    header section {margin: 9px auto;}
+    header {height: 50px;}
+    header span.spanBlock {width: 72px;}
+    header h1 {margin: auto; font-size: 2em;}
+    nav section:nth-child(2) {height: 38px; overflow: scroll;}
+    nav:nth-child(2) a {
+        display: block;
+        font-size: 7vw;
+        padding: 6px;        
+    }
+    aside#left, aside#right, main {
+        width: 100%;
+        float: none;
+        border:0;
+    }
+    aside#left section:first-child{display:none;}
+    aside#left .image-div {position:relative;}
+    aside#left article h4{
+        position: absolute;
+        bottom: 45px;
+        left: 0;
+        margin: 15px 0;
+        background-color: #00000000;
+    }
+    aside#left article h1{
+        background-color: #00000078;
+        position:relative;
+        bottom: 55px;
+        color: white;
+        width: 100%;
+        padding: 15px;
+    }
+    footer > section {
+        width: 100%;
+    }
 }
