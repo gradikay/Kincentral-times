@@ -76,46 +76,46 @@ xhttp.send();
 function loadLeftContent(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
-    var i, txt = "";
+    var i, txt = [];
     var z = x.length;
     
     for (i = 0; i < z; i++) {
 
         if (i === 3) { break;}
-        txt += "<article><div class='image-div'><img src =' " + x[i].getElementsByTagName("mainPic")[0].childNodes[0].nodeValue + " ' />" +
+        txt.push( "<article><div class='image-div'><img src =' " + x[i].getElementsByTagName("mainPic")[0].childNodes[0].nodeValue + " ' />" +
             "<h4>" + x[i].getElementsByTagName("category")[0].childNodes[0].nodeValue + "</h4></div>" +
             "<h1>" + x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "</h1>" +
             "<p class='description'>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue.substring(0, 110) +
-            "</p></article>";
+            "</p></article>");
     }
     //the setup below is faster than calling the entire document.getElementById("left-content").innerHTML = txt;
     let obj;
     obj = document.getElementById("left-content");
-    obj.innerHTML = txt;
+    obj.innerHTML = txt.join(' ');
 }
 function loadRightContent(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
-    var txt = "", i;
+    var txt = [], i;
     var z = x.length;
 
     for (i = 0; i < z; i++) {
-        txt += "<article>" +
+        txt.push("<article>" +
             "<h1>" + x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
-            "</h1></article>";
+            "</h1></article>");
     }
     let obj;
     obj = document.getElementById("right-content");
-    obj.innerHTML = txt;
+    obj.innerHTML = txt.join(' ');
 }
 function loadMainContent(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
-    var i, txt = "";
+    var i, txt = [];
     var z = x.length;
 
     for (i = 0; i < z; i++) {
-        txt += "<article><div class='image-div'>" +
+        txt.push("<article><div class='image-div'>" +
             "<img src='" +
             x[i].getElementsByTagName("mainPic")[0].childNodes[0].nodeValue + " '/> </div>" +
             "<h1>" +
@@ -126,36 +126,36 @@ function loadMainContent(xml) {
             x[i].getElementsByTagName("aLastName")[0].childNodes[0].nodeValue + " | " +
             x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue + "</p>" +
             "<p>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
-            "</p></article>";
+            "</p></article>");
 
     }
     let obj;
     obj = document.getElementById("mainContent");
-    obj.innerHTML = txt;
+    obj.innerHTML = txt.join('');
 }
 function loadMainContentLine(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
-    var txt = "", i;
+    var txt = [], i;
     var z = x.length;
     for (i = 0; i < z ; i++) {
         if (i === 3) {
             break;
         }
-        txt += "<article class='content-div'><div class='image-div-inline'>" +
+        txt.push("<article class='content-div'><div class='image-div-inline'>" +
             "<img src='" + x[i].getElementsByTagName("mainPic")[0].childNodes[0].nodeValue +
             "' alt= '" + x[i].getElementsByTagName("mainPic")[0].childNodes[0].nodeValue +
             "' title ='picture by - " + x[i].getElementsByTagName("aFirstName")[0].childNodes[0].nodeValue + "'/></div>" +
             "<h1>" + x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "</h1>" +
-            "<p class='category-div'> <span class='category'>" + 
+            "<p class='category-div'> <span class='category'>" +
             x[i].getElementsByTagName("category")[0].childNodes[0].nodeValue + "</span>" + " " +
             x[i].getElementsByTagName("aFirstName")[0].childNodes[0].nodeValue + " " +
             x[i].getElementsByTagName("aLastName")[0].childNodes[0].nodeValue + " | " +
-            "<small>" + x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue + "</small></p></article>"
+            "<small>" + x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue + "</small></p></article>");
     }
     let obj;
     obj = document.getElementById("mainContentLine");
-    obj.innerHTML = txt;
+    obj.innerHTML = txt.join(' ');
 }
 // create a function to display our date
 
