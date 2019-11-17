@@ -77,8 +77,9 @@ function loadLeftContent(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
     var i, txt = "";
+    var z = x.length;
     
-    for (i = 0; i < x.length; i++) {
+    for (i = 0; i < z; i++) {
 
         if (i === 3) { break;}
         txt += "<article><div class='image-div'><img src =' " + x[i].getElementsByTagName("mainPic")[0].childNodes[0].nodeValue + " ' />" +
@@ -87,6 +88,7 @@ function loadLeftContent(xml) {
             "<p class='description'>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue.substring(0, 110) +
             "</p></article>";
     }
+    //the setup below is faster than calling the entire document.getElementById("left-content").innerHTML = txt;
     let obj;
     obj = document.getElementById("left-content");
     obj.innerHTML = txt;
@@ -95,8 +97,9 @@ function loadRightContent(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
     var txt = "", i;
+    var z = x.length;
 
-    for (i = 0; i < x.length; i++) {
+    for (i = 0; i < z; i++) {
         txt += "<article>" +
             "<h1>" + x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
             "</h1></article>";
@@ -109,7 +112,9 @@ function loadMainContent(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
     var i, txt = "";
-    for (i = 0; i < x.length; i++) {
+    var z = x.length;
+
+    for (i = 0; i < z; i++) {
         txt += "<article><div class='image-div'>" +
             "<img src='" +
             x[i].getElementsByTagName("mainPic")[0].childNodes[0].nodeValue + " '/> </div>" +
@@ -132,7 +137,8 @@ function loadMainContentLine(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("article");
     var txt = "", i;
-    for (i = 0; i < x.length; i++) {
+    var z = x.length;
+    for (i = 0; i < z ; i++) {
         if (i === 3) {
             break;
         }
